@@ -2,14 +2,22 @@
   width: 100%;
   margin-top: -10rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background: $cl-blue-dark;
+  justify-content: flex-end;
+  // background: $cl-blue-dark;
+  background: linear-gradient(
+    0deg,
+    rgba($cl-dark, 1) 0%,
+    rgba($cl-blue-dark, 1) 100%
+  );
+  position: relative;
 
   &__content {
     padding: 0rem 10rem;
     color: $cl-gray-light;
     letter-spacing: 1px;
+    position: absolute;
+    left: 10%;
 
     & h1 {
       font-size: $h1;
@@ -23,7 +31,9 @@
   }
 
   &__img {
-    width: 40%;
+    width: 50%;
     height: auto;
+    opacity: 0.4;
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
   }
 }

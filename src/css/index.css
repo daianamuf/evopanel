@@ -71,14 +71,17 @@
   width: 100%;
   margin-top: -10rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background: #303547;
+  justify-content: flex-end;
+  background: linear-gradient(0deg, #333533 0%, #303547 100%);
+  position: relative;
 }
 .hero__content {
   padding: 0rem 10rem;
   color: #e2e2e2;
   letter-spacing: 1px;
+  position: absolute;
+  left: 10%;
 }
 .hero__content h1 {
   font-size: 7.2rem;
@@ -89,8 +92,74 @@
   margin-bottom: 1rem;
 }
 .hero__img {
-  width: 40%;
+  width: 50%;
   height: auto;
+  opacity: 0.4;
+  -webkit-clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.properties {
+  background: linear-gradient(0deg, #303547 0%, #333533 100%);
+  color: #e2e2e2;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(10rem, 30rem));
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  height: 20rem;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+}
+.card__side {
+  height: 20rem;
+  transition: all 0.8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.card__side--front {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 10px 20px rgba(214, 214, 214, 0.1);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border: 1px solid rgba(226, 226, 226, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+.card__side--back {
+  transform: rotateY(180deg);
+  background: #d6d6d6;
+  color: #333533;
+  font-size: 1.4rem;
+  padding: 3rem 2rem;
+  text-align: justify;
+  line-height: 1.1;
+}
+.card:hover .card__side--front {
+  transform: rotateY(-180deg);
+}
+.card:hover .card__side--back {
+  transform: rotateY(0);
+}
+
+ion-icon {
+  font-size: 4.8rem;
+  color: #ffee32;
 }
 
 *,
