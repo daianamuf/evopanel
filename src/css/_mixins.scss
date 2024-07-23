@@ -1,0 +1,8 @@
+@mixin glass-bg {
+  /* From https://css.glass */
+  background: rgba($cl-white, 0.25);
+  box-shadow: 0 10px 20px rgba($cl-gray, 0.1);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border: 1px solid rgba($cl-gray-light, 0.2);
+}

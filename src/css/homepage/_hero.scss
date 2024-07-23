@@ -1,0 +1,29 @@
+.hero {
+  width: 100%;
+  margin-top: -10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $cl-blue-dark;
+
+  &__content {
+    padding: 0rem 10rem;
+    color: $cl-gray-light;
+    letter-spacing: 1px;
+
+    & h1 {
+      font-size: $h1;
+      margin-bottom: 2rem;
+    }
+
+    & h4 {
+      font-size: $h4;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__img {
+    width: 40%;
+    height: auto;
+  }
+}

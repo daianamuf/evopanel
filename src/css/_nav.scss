@@ -1,0 +1,34 @@
+.nav {
+  @include glass-bg;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  width: 100%;
+  height: 10rem;
+  padding: 2rem 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    color: $cl-white;
+    font-size: $h3;
+  }
+
+  &__list {
+    list-style: none;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $cl-white;
+    &.active {
+      font-size: $font-medium;
+    }
+  }
+}

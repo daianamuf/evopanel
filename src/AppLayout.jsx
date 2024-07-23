@@ -15,8 +15,8 @@ function AppLayout() {
       <Suspense fallback={<Loader />}>
         <Nav />
       </Suspense>
-      {isLoading && <Loader />}
 
+      {isLoading && <Loader />}
       <main>
         <Outlet />
       </main>

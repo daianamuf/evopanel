@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/paneluri",
+        path: "/panouri",
         element: (
           <Suspense fallback={<Loader />}>
             <Panels />
