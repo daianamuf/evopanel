@@ -53,11 +53,9 @@
     { "id": 51, "image": "/assets/images/51.jpeg" },
     { "id": 52, "image": "/assets/images/52.jpeg" },
     { "id": 53, "image": "/assets/images/53.jpeg" },
-    { "id": 54, "image": "/assets/images/54.jpeg" },
-    { "id": 55, "image": "/assets/images/55.jpeg" },
+
     { "id": 56, "image": "/assets/images/56.jpeg" },
     { "id": 57, "image": "/assets/images/57.jpeg" },
-    { "id": 58, "image": "/assets/images/58.jpeg" },
     { "id": 59, "image": "/assets/images/59.jpeg" }
   ]
 }

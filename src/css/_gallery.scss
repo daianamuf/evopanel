@@ -1,0 +1,68 @@
+.gallery {
+  background: linear-gradient(
+    0deg,
+    rgba($cl-dark, 1) 0%,
+    rgba($cl-blue-dark, 1) 100%
+  );
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5rem;
+
+  &__link {
+    display: block;
+    position: relative;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.slideshow__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  margin: 0 auto;
+  margin-top: 4rem;
+}
+
+.slideshow__close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 12;
+  transition: all 0.5s;
+  font-size: $h2;
+  text-decoration: none;
+  color: $cl-white;
+  text-shadow: 0px 2px 2px $cl-dark;
+
+  @media (max-width: 42em) {
+    right: 3%;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > .gallery__link {
+  /* change div to reference your elements you put in <Masonry> */
+  background: $cl-gray-dark;
+  margin-bottom: 30px;
+}

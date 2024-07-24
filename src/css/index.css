@@ -67,6 +67,68 @@
     transform: rotate(360deg);
   }
 }
+.gallery {
+  background: linear-gradient(0deg, #333533 0%, #303547 100%);
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
+.gallery__link {
+  display: block;
+  position: relative;
+}
+.gallery__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.slideshow__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  margin: 0 auto;
+  margin-top: 4rem;
+}
+
+.slideshow__close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 12;
+  transition: all 0.5s;
+  font-size: 4.8rem;
+  text-decoration: none;
+  color: #fff;
+  text-shadow: 0px 2px 2px #333533;
+}
+@media (max-width: 42em) {
+  .slideshow__close {
+    right: 3%;
+  }
+}
+.slideshow__close:hover {
+  transform: scale(1.2);
+}
+
+.my-masonry-grid { /* Not needed if autoprefixing */ /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > .gallery__link {
+  /* change div to reference your elements you put in <Masonry> */
+  background: #404040;
+  margin-bottom: 30px;
+}
+
 .hero {
   width: 100%;
   margin-top: -10rem;
@@ -183,10 +245,13 @@ body {
 }
 
 .wrapper {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(0deg, #333533 0%, #303547 100%);
 }
 
 .visible {

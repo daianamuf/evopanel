@@ -6,3 +6,19 @@
   -webkit-backdrop-filter: blur(9px);
   border: 1px solid rgba($cl-gray-light, 0.2);
 }
+
+@mixin bg-gray-blue {
+  background: linear-gradient(
+    0deg,
+    rgba($cl-blue-dark, 1) 0%,
+    rgba($cl-dark, 1) 100%
+  );
+}
+
+@mixin bg-blue-gray {
+  background: linear-gradient(
+    0deg,
+    rgba($cl-dark, 1) 0%,
+    rgba($cl-blue-dark, 1) 100%
+  );
+}

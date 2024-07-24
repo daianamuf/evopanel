@@ -8,6 +8,7 @@ import Loader from "./components/Loader";
 const Homepage = lazy(() => import("./pages/Homepage"));
 const Panels = lazy(() => import("./pages/Panels"));
 const Gallery = lazy(() => import("./pages/Gallery"));
+const Slideshow = lazy(() => import("./components/gallery/Slideshow"));
 const Contact = lazy(() => import("./pages/Contact"));
 
 const router = createBrowserRouter([
@@ -36,6 +37,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loader />}>
             <Gallery />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/slideshow",
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Slideshow />
           </Suspense>
         ),
       },
