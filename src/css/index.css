@@ -44,6 +44,7 @@
   border-right: 4px solid transparent;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
+  margin: 0 auto;
 }
 
 .loader::after {
@@ -86,7 +87,7 @@
 .slideshow__wrapper {
   position: relative;
   width: 100%;
-  height: 100dvh;
+  height: 100vh;
   margin: 0 auto;
   margin-top: 4rem;
 }
@@ -139,11 +140,12 @@
   position: relative;
 }
 .hero__content {
-  padding: 0rem 10rem;
+  padding: 0rem 5rem;
   color: #e2e2e2;
   letter-spacing: 1px;
   position: absolute;
   left: 10%;
+  z-index: 10;
 }
 .hero__content h1 {
   font-size: 7.2rem;
@@ -221,7 +223,49 @@
 
 ion-icon {
   font-size: 4.8rem;
-  color: #ffee32;
+  color: #fff;
+}
+
+.presentation {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-rows: repeat(3, 0.8fr);
+}
+.presentation__wrapper {
+  background: linear-gradient(0deg, #303547 0%, #333533 100%);
+  width: 100%;
+  padding-bottom: 10rem;
+}
+.presentation__img {
+  width: 100%;
+}
+.presentation__components {
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+.presentation__model {
+  grid-row: 2/3;
+  grid-column: 2/4;
+}
+.presentation__size {
+  grid-row: 3/4;
+  grid-column: 1/3;
+}
+.presentation__text {
+  color: #e2e2e2;
+}
+.presentation__text--size {
+  grid-row: 3/4;
+  font-size: 2.4rem;
+  align-self: center;
+  text-align: center;
+}
+.presentation__text--model {
+  grid-row: 2/3;
+  align-self: center;
+  line-height: 1.3;
 }
 
 *,

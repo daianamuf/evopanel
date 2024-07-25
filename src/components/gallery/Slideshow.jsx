@@ -6,9 +6,10 @@ import useImageGalleryData from "../../useImageGalleryData";
 
 function Slideshow() {
   const location = useLocation();
+
   const queryParams = new URLSearchParams(location.search);
   const startIndex = Number(queryParams.get("index"));
-  console.log(startIndex);
+
   const { imageGallery } = useImageGalleryData();
   if (isNaN(startIndex) || startIndex < 0 || startIndex >= imageGallery.length)
     return null;
