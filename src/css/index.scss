@@ -28,6 +28,7 @@ body {
   justify-content: center;
   align-items: center;
   @include bg-blue-gray;
+  position: relative;
 }
 
 .visible {

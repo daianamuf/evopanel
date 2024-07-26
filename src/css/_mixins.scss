@@ -22,3 +22,13 @@
     rgba($cl-blue-dark, 1) 100%
   );
 }
+
+@mixin btn {
+  border: 2px solid $cl-accent-2;
+  border-radius: 20px;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease-in;
+  &:hover {
+    transform: scale(1.1);
+  }
+}

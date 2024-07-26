@@ -9,6 +9,18 @@
     @include bg-gray-blue;
     width: 100%;
     padding-bottom: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__btn {
+    text-decoration: none;
+    color: $cl-white;
+
+    @include btn;
   }
 
   &__img {

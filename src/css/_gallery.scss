@@ -11,12 +11,14 @@
   &__link {
     display: block;
     position: relative;
+    border-radius: 4px;
   }
 
   &__img {
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 4px;
   }
 }
 

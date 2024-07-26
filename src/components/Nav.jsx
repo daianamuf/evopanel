@@ -21,7 +21,7 @@ function Nav() {
           </NavLink>
         </li>
         <li className="nav__item">
-          <NavLink to={"/contact"} className="nav__link">
+          <NavLink to={"/contact"} className="nav__link nav__link--contact">
             Contact
           </NavLink>
         </li>

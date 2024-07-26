@@ -27,8 +27,18 @@
   &__link {
     text-decoration: none;
     color: $cl-white;
+
+    transition: all 0.3s;
+    &:hover {
+      font-size: 2.2rem;
+    }
+
     &.active {
       font-size: $font-medium;
+    }
+
+    &--contact {
+      @include btn;
     }
   }
 }

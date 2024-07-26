@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Presentation() {
   return (
     <div className="presentation__wrapper">
@@ -29,6 +31,9 @@ function Presentation() {
           alt="Marimi"
         />
       </section>
+      <Link className="presentation__btn" to={"/panouri"}>
+        Descoperă mai multe modele
+      </Link>
     </div>
   );
 }

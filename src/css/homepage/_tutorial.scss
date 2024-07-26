@@ -1,0 +1,50 @@
+.tutorial {
+  @include bg-blue-gray;
+  width: 100%;
+
+  padding: 10rem 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+
+  &__img {
+    width: 50%;
+  }
+
+  &__steps {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 1px;
+      height: 120%;
+      background: $cl-gray-light;
+      position: absolute;
+      top: -10%;
+    }
+  }
+
+  &__step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    &--text {
+      color: $cl-gray-light;
+      width: 60%;
+
+      & span {
+        font-size: $h4;
+      }
+    }
+    &--img {
+      width: 10rem;
+      border-radius: 4px;
+    }
+  }
+}
