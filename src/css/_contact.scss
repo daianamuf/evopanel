@@ -1,0 +1,23 @@
+.contact {
+  width: 100%;
+  padding-bottom: 10rem;
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__data {
+    width: 100%;
+
+    & p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      color: $cl-gray-light;
+      font-size: $h4;
+      margin-bottom: 3rem;
+    }
+  }
+}

@@ -1,10 +1,8 @@
 import { Outlet, useLocation, useNavigation } from "react-router-dom";
-import { Suspense, lazy } from "react";
 
 import Loader from "./components/Loader";
-
-const Nav = lazy(() => import("./components/Nav"));
-const Footer = lazy(() => import("./components/Footer"));
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 function AppLayout() {
   const navigation = useNavigation;
@@ -14,22 +12,14 @@ function AppLayout() {
 
   return (
     <div className="wrapper">
-      {!isSlideshow && (
-        <Suspense fallback={<Loader />}>
-          <Nav />
-        </Suspense>
-      )}
+      {!isSlideshow && <Nav />}
 
       {isLoading && <Loader />}
       <main>
         <Outlet />
       </main>
 
-      {!isSlideshow && (
-        <Suspense fallback={<Loader />}>
-          <Footer />
-        </Suspense>
-      )}
+      {!isSlideshow && <Footer />}
     </div>
   );
 }

@@ -1,6 +1,4 @@
-import { Suspense, lazy } from "react";
-
-import Loader from "../components/Loader";
+import { lazy } from "react";
 
 const Hero = lazy(() => import("../components/homepage/Hero"));
 const Properties = lazy(() => import("../components/homepage/Properties"));
@@ -10,18 +8,13 @@ const Tutorial = lazy(() => import("../components/homepage/Tutorial"));
 function Homepage() {
   return (
     <section>
-      <Suspense fallback={Loader}>
-        <Hero />
-      </Suspense>
-      <Suspense fallback={Loader}>
-        <Presentation />
-      </Suspense>
-      <Suspense fallback={Loader}>
-        <Tutorial />
-      </Suspense>
-      <Suspense fallback={Loader}>
-        <Properties />
-      </Suspense>
+      <Hero />
+
+      <Presentation />
+
+      <Tutorial />
+
+      <Properties />
     </section>
   );
 }
