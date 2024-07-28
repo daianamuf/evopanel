@@ -12,6 +12,21 @@
   gap: 2rem;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: 1500px) {
+    grid-template-columns: repeat(3, minmax(10rem, 50rem));
+  }
+
+  @media (max-width: 620px) {
+    width: 95%;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, minmax(10rem, 30rem));
+  }
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 0rem;
+  }
 }
 
 .card {
@@ -19,6 +34,29 @@
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
+
+  @media (min-width: 1500px) {
+    height: 40rem;
+  }
+
+  @media (max-width: 400px) {
+    width: 70%;
+    height: 28rem;
+  }
+
+  @media (max-width: 620px) {
+    &:last-child {
+      grid-column: 1 / span2;
+      width: 50%;
+      justify-self: center;
+    }
+  }
+
+  &__heading {
+    @media (max-width: 420px) {
+      font-size: $font-base;
+    }
+  }
 
   &__side {
     height: 20rem;
@@ -31,6 +69,13 @@
     backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden;
+
+    @media (min-width: 1500px) {
+      height: 40rem;
+    }
+    @media (max-width: 400px) {
+      height: 28rem;
+    }
 
     &--front {
       @include glass-bg;
@@ -50,6 +95,14 @@
       padding: 3rem 2rem;
       text-align: justify;
       line-height: 1.1;
+
+      @media (min-width: 1500px) {
+        font-size: $font-medium;
+      }
+      @media (max-width: 620px) {
+        padding: 1rem;
+        text-align: left;
+      }
     }
   }
 
@@ -65,4 +118,11 @@
 ion-icon {
   font-size: $h2;
   color: $cl-white;
+
+  @media (min-width: 1500px) {
+    font-size: $h1;
+  }
+  @media (max-width: 420px) {
+    font-size: $h3;
+  }
 }

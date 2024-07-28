@@ -10,6 +10,10 @@
 
 html {
   font-size: 62.5%;
+
+  @media (max-width: 770px) {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -18,10 +22,13 @@ body {
   font-family: "Raleway", sans-serif;
   font-size: $font-base;
   position: relative;
+
+  @media (min-width: 1500px) {
+    font-size: $font-medium;
+  }
 }
 
 .wrapper {
-  // width: 100%;
   width: 100%;
   min-height: 100%;
   display: flex;

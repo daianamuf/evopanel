@@ -37,7 +37,7 @@ function Hero() {
   useEffect(() => {
     resetInterval();
     return () => clearInterval(intervalRef.current);
-  }, []);
+  });
 
   const handleNextClick = () => {
     nextSlide();

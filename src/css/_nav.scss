@@ -11,9 +11,25 @@
   justify-content: space-between;
   align-items: center;
 
+  @media (max-width: 1200px) {
+    padding: 2rem 4rem;
+  }
+
+  @media (max-width: 620px) {
+    height: 12rem;
+    padding: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+
   &__logo {
     color: $cl-white;
     font-size: $h3;
+
+    @media (max-width: 350px) {
+      font-size: $h4;
+    }
   }
 
   &__list {
@@ -22,19 +38,45 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+
+    @media (max-width: 875px) {
+      justify-content: space-between;
+    }
+
+    @media (max-width: 620px) {
+      justify-content: space-evenly;
+      width: 100%;
+    }
+
+    @media (max-width: 350px) {
+      justify-content: center;
+      gap: 1rem;
+    }
   }
 
   &__link {
     text-decoration: none;
     color: $cl-white;
 
+    @media (max-width: 350px) {
+      font-size: $font-small;
+    }
+
     transition: all 0.3s;
     &:hover {
       font-size: 2.2rem;
+
+      @media (max-width: 350px) {
+        font-size: $font-small;
+      }
     }
 
     &.active {
       font-size: $font-medium;
+
+      @media (max-width: 350px) {
+        font-size: $font-base;
+      }
     }
 
     &--contact {
