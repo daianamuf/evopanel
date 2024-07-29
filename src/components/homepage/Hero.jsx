@@ -1,6 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import InfiniteScroll from "react-infinite-scroller";
-import Loader from "../Loader";
 
 const sliderImages = [
   { id: 1, src: "/assets/images/6.jpeg" },
@@ -60,32 +58,31 @@ function Hero() {
           <h4>Impermeabile</h4>
         </div>
       </div>
-      <InfiniteScroll pageStart={0} loader={<Loader />}>
-        <div className="hero__carousel">
-          <button
-            className="hero__button hero__button--prev"
-            onClick={handlePrevClick}
-          >
-            &#10094;
-          </button>
-          <div className="hero__slide-container">
-            {sliderImages.map((img, index) => (
-              <img
-                key={img.id}
-                src={img.src}
-                alt=""
-                className={`hero__img ${index === currentIndex ? "active" : ""}`}
-              />
-            ))}
-          </div>
-          <button
-            className="hero__button hero__button--next"
-            onClick={handleNextClick}
-          >
-            &#10095;
-          </button>
+      {/* <InfiniteScroll pageStart={0} loader={<Loader />} loadMore={true}> */}
+      <div className="hero__carousel">
+        <button
+          className="hero__button hero__button--prev"
+          onClick={handlePrevClick}
+        >
+          &#10094;
+        </button>
+        <div className="hero__slide-container">
+          {sliderImages.map((img, index) => (
+            <img
+              key={img.id}
+              src={img.src}
+              alt=""
+              className={`hero__img ${index === currentIndex ? "active" : ""}`}
+            />
+          ))}
         </div>
-      </InfiniteScroll>
+        <button
+          className="hero__button hero__button--next"
+          onClick={handleNextClick}
+        >
+          &#10095;
+        </button>
+      </div>
     </div>
   );
 }

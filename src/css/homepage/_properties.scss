@@ -87,7 +87,7 @@
     }
 
     &--front {
-      @include glass-bg;
+      @include glass-bg-light;
       display: flex;
       flex-direction: column;
       justify-content: center;

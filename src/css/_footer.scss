@@ -35,6 +35,7 @@
   @media (max-width: 620px) {
     align-items: center;
     padding: 2rem;
+    height: 58rem;
   }
 
   &__img {
@@ -52,15 +53,12 @@
     }
 
     @media (max-width: 875px) {
-      width: 75%;
+      width: 70%;
     }
 
     @media (max-width: 620px) {
-      width: 95%;
-    }
-    @media (max-width: 620px) {
       width: 100%;
-      top: -10rem;
+      top: -15rem;
       clip-path: none;
     }
   }
@@ -89,6 +87,7 @@
       @media (max-width: 620px) {
         position: static;
         align-self: center;
+        margin-bottom: 8rem;
       }
     }
   }
