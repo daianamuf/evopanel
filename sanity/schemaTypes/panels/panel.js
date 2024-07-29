@@ -1,36 +1,19 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'post',
-  title: 'Post',
+  name: 'panel',
+  title: 'Panel',
   type: 'document',
   fields: [
     defineField({
       name: 'title',
-      title: 'Title',
+      title: 'Nume',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: {type: 'author'},
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
       name: 'mainImage',
-      title: 'Main image',
+      title: 'Imagine Principala',
       type: 'image',
       options: {
         hotspot: true,
@@ -38,16 +21,43 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
+      name: 'size',
+      title: 'Marime',
+      type: 'text',
     }),
     defineField({
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
-      validation: (Rule) => Rule.required(),
+      name: 'weight',
+      title: 'Greutate',
+      type: 'text',
     }),
+    defineField({
+      name: 'surface',
+      title: 'Suprafata',
+      type: 'text',
+    }),
+    defineField({
+      name: 'middle',
+      title: 'Mijloc',
+      type: 'text',
+    }),
+    defineField({
+      name: 'back',
+      title: 'Spate',
+      type: 'text',
+    }),
+    defineField({
+      name: 'colors',
+      title: 'Culori',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    // defineField({
+    //   name: 'categories',
+    //   title: 'Categories',
+    //   type: 'array',
+    //   of: [{type: 'reference', to: {type: 'category'}}],
+    // }),
   ],
 })

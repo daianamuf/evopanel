@@ -46,3 +46,18 @@ body {
 .hidden {
   display: none;
 }
+
+.error-message {
+  font-size: $font-small;
+  margin-left: 6rem;
+  margin-bottom: 0.6rem;
+  color: $cl-red;
+  font-weight: bold;
+}
+
+.submission-message {
+  margin-top: 3rem;
+  text-align: center;
+  color: $cl-accent;
+  font-weight: 600;
+}

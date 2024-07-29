@@ -58,17 +58,19 @@ const properties = [
 function Properties() {
   return (
     <section className="properties">
-      {properties.map((prop) => (
-        <div className="card" key={prop.id}>
-          <div className="card__side card__side--front">
-            <ion-icon name={prop.iconName} className="card__icon"></ion-icon>
-            <h3 className="card__heading">{prop.heading}</h3>
+      <div className="properties__wrapper">
+        {properties.map((prop) => (
+          <div className="card" key={prop.id}>
+            <div className="card__side card__side--front">
+              <ion-icon name={prop.iconName} className="card__icon"></ion-icon>
+              <h3 className="card__heading">{prop.heading}</h3>
+            </div>
+            <div className="card__side card__side--back">
+              <p className="card__text">{prop.text}</p>
+            </div>
           </div>
-          <div className="card__side card__side--back">
-            <p className="card__text">{prop.text}</p>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </section>
   );
 }
