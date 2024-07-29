@@ -1,6 +1,78 @@
+import { Link } from "react-router-dom";
+
 function Presentation() {
   return (
     <div className="presentation__wrapper">
+      <div className="presentation__intro">
+        <div>
+          <h2>Caracteristici ale panourilor noastre siding metalic:</h2>
+          <ul>
+            <li>
+              <span>Durabilitate excepțională: </span>
+              <p>Rezistente la intemperii, coroziune și impact.</p>
+            </li>
+            <li>
+              <span>Întreținere minimă: </span>
+              <p>
+                Ușor de curățat și de menținut, economisindu-ți timp și bani.
+              </p>
+            </li>
+            <li>
+              <span>Eficiență energetică: </span>
+              <p>
+                Contribuie la izolarea termică a clădirii tale, reducând
+                costurile de energie.
+              </p>
+            </li>
+            <li>
+              <span>Varietate de modele: </span>
+              <p>Clasic, modern, rustic și industrial.</p>
+            </li>
+            <li>
+              <span>Paletă largă de nuanțe: </span>
+              <p>
+                De la culori neutre (alb, gri, negru) la tonuri pământii (maro,
+                bej) și culori vii (albastru, verde, roșu).
+              </p>
+            </li>
+            <li>
+              <span>Garanție extinsă: </span>
+              <p>Garantăm calitatea produselor noastre pentru mulți ani.</p>
+            </li>
+          </ul>
+
+          <Link className="presentation__cta--btn" to={"/contact"}>
+            Cere o ofertă
+          </Link>
+        </div>
+
+        <div>
+          <h2>Oferta noastră include:</h2>
+          <ul>
+            <li>
+              <span>Consultanță personalizată: </span>
+              <p>
+                Te ajutăm să alegi modelul și nuanța potrivită pentru casa ta.
+              </p>
+            </li>
+            <li>
+              <span>Livrare rapidă: </span>
+              <p>
+                Asigurăm transportul rapid și sigur al panourilor către locația
+                ta.
+              </p>
+            </li>
+            <li>
+              <span>Prețuri competitive: </span>
+              <p>
+                Oferim cele mai bune prețuri de pe piață fără a compromite
+                calitatea.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <section className="presentation">
         <img
           className="presentation__img presentation__components"

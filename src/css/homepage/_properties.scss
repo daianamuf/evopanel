@@ -5,12 +5,11 @@
     rgba($cl-dark, 1) 100%
   );
   color: $cl-gray-light;
+  padding-bottom: 10rem;
 
   &__wrapper {
     width: 80%;
     margin: 0 auto;
-    padding-top: 10rem;
-    padding-bottom: 6rem;
     display: grid;
     grid-template-columns: repeat(3, minmax(10rem, 30rem));
     gap: 2rem;
@@ -26,6 +25,10 @@
       flex-direction: column;
       gap: 2rem;
       padding: 5rem 0rem;
+    }
+
+    @media (max-width: 400px) {
+      padding-bottom: 0;
     }
   }
 }
@@ -44,15 +47,13 @@
     width: 60%;
   }
 
-  @media (max-width: 420px) {
+  @media (max-width: 500px) {
     width: 80%;
-    height: 28rem;
   }
 
-  &__heading {
-    @media (max-width: 420px) {
-      font-size: $font-base;
-    }
+  @media (max-width: 400px) {
+    width: 90%;
+    height: 28rem;
   }
 
   &__side {

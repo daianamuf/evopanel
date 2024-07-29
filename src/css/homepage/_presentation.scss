@@ -18,11 +18,52 @@
     @include bg-gray-blue;
     width: 100%;
     padding-bottom: 10rem;
+    padding-top: 5rem;
     display: flex;
     flex-direction: column;
     gap: 3rem;
     align-items: center;
     justify-content: center;
+  }
+
+  &__intro {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    gap: 5rem;
+    color: $cl-gray-light;
+    position: relative;
+
+    @media (max-width: 620px) {
+      flex-direction: column;
+      padding-bottom: 6rem;
+    }
+
+    & h2 {
+      font-size: $font-medium;
+      margin-bottom: 2rem;
+    }
+
+    & li {
+      font-size: $font-base;
+      margin-bottom: 1rem;
+
+      & span {
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__cta--btn {
+    @include btn;
+    color: $cl-white;
+    text-decoration: none;
+    position: absolute;
+    right: 0;
+
+    @media (max-width: 620px) {
+      bottom: -1rem;
+    }
   }
 
   &__img {
