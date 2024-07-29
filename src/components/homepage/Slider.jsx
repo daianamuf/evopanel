@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { Link } from "react-router-dom";
 
 function Slider() {
   const [panels, setPanels] = useState([]);
@@ -63,28 +64,26 @@ function Slider() {
 
   return (
     <section className="slider">
-      <div className="slider__wrapper">
+      <div className="slider__carousel">
         <button
           className="slider__btn slider__btn--prev"
           onClick={handlePrevClick}
         >
           &#10094;
         </button>
-        <div className="slider__carousel">
-          {firstFivePanels.map((panel, index) => (
-            <div
-              key={panel._id}
-              className={`slider__panel ${index === currentIndex ? "active" : ""}`}
-            >
-              <img
-                src={panel.mainImageUrl}
-                alt={panel.title}
-                className="slider__panel--img"
-              />
-              <h1 className="slider__panel--heading">{panel.title}</h1>
-            </div>
-          ))}
-        </div>
+        {firstFivePanels.map((panel, index) => (
+          <div
+            key={panel._id}
+            className={`slider__panel ${index === currentIndex ? "active" : ""}`}
+          >
+            <img
+              src={panel.mainImageUrl}
+              alt={panel.title}
+              className="slider__panel--img"
+            />
+            <h1 className="slider__panel--heading">{panel.title}</h1>
+          </div>
+        ))}
         <button
           className="slider__btn slider__btn--next"
           onClick={handleNextClick}
@@ -92,6 +91,10 @@ function Slider() {
           &#10095;
         </button>
       </div>
+
+      <Link className="slider__cta--btn" to={"/panouri"}>
+        Descoperă mai multe modele
+      </Link>
     </section>
   );
 }

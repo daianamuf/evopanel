@@ -1,3 +1,97 @@
 .slider {
+  @include bg-blue-gray;
   width: 100%;
+  padding-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  @media (max-width: 875px) {
+    padding-bottom: 20rem;
+  }
+  @media (max-width: 620px) {
+    padding-bottom: 14rem;
+  }
+
+  &__carousel {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__panel {
+    @include glass-bg-light;
+    height: 40rem;
+    display: flex;
+    flex: 0 0 100%;
+    flex-direction: column;
+    border-radius: 12px;
+    opacity: 0;
+
+    transition: opacity 1s ease-in-out;
+
+    position: absolute;
+
+    &.active {
+      opacity: 1;
+      position: relative;
+    }
+
+    &--img {
+      width: 100%;
+      height: 30rem;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+
+    &--heading {
+      width: 100%;
+
+      font-size: $h3;
+      font-weight: 700;
+      color: white;
+      padding-left: 2rem;
+      margin-bottom: 2rem;
+      margin-top: 0.6rem;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    z-index: 10;
+
+    &--prev {
+      left: 0;
+      z-index: 22;
+    }
+
+    &--next {
+      right: 0;
+      z-index: 22;
+    }
+  }
+
+  &__cta--btn {
+    text-decoration: none;
+    color: $cl-white;
+
+    @include btn;
+
+    @media (min-width: 1500px) {
+      font-size: $h3;
+    }
+  }
 }
