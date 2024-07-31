@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const properties = [
   {
     id: 1,
@@ -56,11 +58,21 @@ const properties = [
 ];
 
 function Properties() {
+  const [activeCard, setActiveCard] = useState(null);
+
+  const handleTouchEnd = (id) => {
+    setActiveCard((prevActiveCard) => (prevActiveCard === id ? null : id));
+  };
+
   return (
     <section className="properties">
       <div className="properties__wrapper">
         {properties.map((prop) => (
-          <button className="card" key={prop.id}>
+          <button
+            className={`card ${activeCard === prop.id ? "active" : ""}`}
+            key={prop.id}
+            onTouchEnd={() => handleTouchEnd(prop.id)}
+          >
             <div className="card__side card__side--front">
               <ion-icon name={prop.iconName} className="card__icon"></ion-icon>
               <h3 className="card__heading">{prop.heading}</h3>

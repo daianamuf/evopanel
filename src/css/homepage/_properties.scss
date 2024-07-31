@@ -114,30 +114,22 @@
     }
   }
 
-  &:hover &__side--front {
-    transform: rotateY(-180deg);
-  }
-
-  &:hover &__side--back {
-    transform: rotateY(0);
-  }
-
-  @media (max-width: 500px) {
+  @media (min-width: 500px) {
     &:hover &__side--front {
-      transform: rotateY(0);
+      transform: rotateY(-180deg);
     }
 
     &:hover &__side--back {
-      transform: rotateY(-180deg);
-    }
-
-    &:focus &__side--front {
-      transform: rotateY(-180deg);
-    }
-
-    &:focus &__side--back {
       transform: rotateY(0);
     }
+  }
+
+  &.active &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &.active &__side--back {
+    transform: rotateY(0);
   }
 }
 
