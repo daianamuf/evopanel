@@ -90,7 +90,11 @@
       color: $cl-dark;
 
       font-size: $font-small;
-      padding: 3rem 2rem;
+      padding: 0rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
       text-align: justify;
       line-height: 1.1;
 
@@ -98,7 +102,7 @@
         font-size: $font-medium;
       }
       @media (max-width: 620px) {
-        padding: 0.6rem;
+        padding: 0rem 0.6rem;
         text-align: left;
         font-size: $font-base;
         line-height: 1;
@@ -112,6 +116,24 @@
 
   &:hover &__side--back {
     transform: rotateY(0);
+  }
+
+  @media (max-width: 500px) {
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+
+    &:hover &__side--back {
+      transform: rotateY(-180deg);
+    }
+
+    &:focus &__side--front {
+      transform: rotateY(-180deg);
+    }
+
+    &:focus &__side--back {
+      transform: rotateY(0);
+    }
   }
 }
 
