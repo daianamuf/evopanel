@@ -44,7 +44,7 @@ function Slider() {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
     }
-    intervalRef.current = setInterval(nextSlide, 4000);
+    intervalRef.current = setInterval(nextSlide, 3000);
   };
 
   useEffect(() => {
