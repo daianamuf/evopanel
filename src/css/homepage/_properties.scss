@@ -38,6 +38,9 @@
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
+  background: transparent;
+  border: none;
+  color: $cl-white;
 
   @media (min-width: 1500px) {
     height: 40rem;
@@ -86,8 +89,8 @@
 
     &--back {
       transform: rotateY(180deg);
-      background: $cl-gray;
-      color: $cl-dark;
+      @include glass-bg;
+      color: $cl-white;
 
       font-size: $font-small;
       padding: 0rem 2rem;

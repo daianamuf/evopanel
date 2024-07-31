@@ -729,6 +729,9 @@
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
+  background: transparent;
+  border: none;
+  color: #fff;
 }
 @media (min-width: 1500px) {
   .card {
@@ -786,8 +789,13 @@
 }
 .card__side--back {
   transform: rotateY(180deg);
-  background: #d6d6d6;
-  color: #333533;
+  /* From https://css.glass */
+  background: rgba(64, 64, 64, 0.4);
+  box-shadow: 0 10px 20px rgba(214, 214, 214, 0.1);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border: 1px solid rgba(226, 226, 226, 0.2);
+  color: #fff;
   font-size: 1.4rem;
   padding: 0rem 2rem;
   display: flex;
