@@ -63,7 +63,7 @@
 
     transition: all 0.3s;
     &:hover {
-      font-size: 2.2rem;
+      font-size: $font-medium;
 
       @media (max-width: 350px) {
         font-size: $font-small;
@@ -72,6 +72,7 @@
 
     &.active {
       font-size: $font-medium;
+      text-decoration: underline;
 
       @media (max-width: 350px) {
         font-size: $font-base;
