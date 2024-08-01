@@ -32,11 +32,11 @@
 }
 .nav__logo {
   color: #fff;
-  font-size: 3.6rem;
+  font-size: 3rem;
 }
 @media (max-width: 350px) {
   .nav__logo {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
 }
 .nav__list {
@@ -81,7 +81,7 @@
   }
 }
 .nav__link.active {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
 }
 @media (max-width: 350px) {
   .nav__link.active {
@@ -171,7 +171,7 @@
   right: 2rem;
   z-index: 12;
   transition: all 0.5s;
-  font-size: 4.8rem;
+  font-size: 4.4rem;
   text-decoration: none;
   color: #fff;
   text-shadow: 0px 2px 2px #333533;
@@ -348,12 +348,12 @@
   justify-content: center;
   gap: 2rem;
   color: #e2e2e2;
-  font-size: 3rem;
+  font-size: 2.8rem;
   margin-bottom: 3rem;
 }
 @media (max-width: 490px) {
   .contact__data p {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 }
 @media (max-width: 385px) {
@@ -470,12 +470,12 @@
   bottom: 4rem;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 3rem;
+  font-size: 2.8rem;
   color: #fff;
 }
 @media (min-width: 1440px) {
   .panels__intro p {
-    font-size: 3.6rem;
+    font-size: 3rem;
   }
 }
 @media (max-width: 800px) {
@@ -490,7 +490,7 @@
 }
 @media (max-width: 525px) {
   .panels__intro p {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 }
 .panels__wrapper {
@@ -521,7 +521,7 @@
 }
 .panel__heading {
   width: 100%;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: #fff;
   padding-left: 2rem;
@@ -579,28 +579,28 @@
   }
 }
 .hero__content h1 {
-  font-size: 7.2rem;
+  font-size: 6.6rem;
   margin-bottom: 2rem;
 }
 @media (max-width: 620px) {
   .hero__content h1 {
-    font-size: 4.8rem;
+    font-size: 4.4rem;
   }
 }
 @media (max-width: 360px) {
   .hero__content h1 {
-    font-size: 3.6rem;
+    font-size: 3rem;
   }
 }
 .hero__content h4 {
-  font-size: 3rem;
+  font-size: 2.8rem;
   margin-bottom: 2rem;
   text-align: center;
   text-transform: uppercase;
 }
 @media (max-width: 620px) {
   .hero__content h4 {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 }
 @media (max-width: 360px) {
@@ -790,7 +790,7 @@
   justify-content: center;
   align-items: center;
   gap: 4rem;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
 }
 .card__side--back {
   transform: rotateY(180deg);
@@ -811,7 +811,7 @@
 }
 @media (min-width: 1500px) {
   .card__side--back {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 }
 @media (max-width: 940px) {
@@ -842,17 +842,17 @@
 }
 
 ion-icon {
-  font-size: 4.8rem;
+  font-size: 4.4rem;
   color: #fff;
 }
 @media (min-width: 1500px) {
   ion-icon {
-    font-size: 7.2rem;
+    font-size: 6.6rem;
   }
 }
 @media (max-width: 420px) {
   ion-icon {
-    font-size: 3.6rem;
+    font-size: 3rem;
   }
 }
 
@@ -861,9 +861,14 @@ ion-icon {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 2fr 2fr 1fr;
-  grid-template-rows: repeat(3, 0.8fr);
+  grid-template-rows: repeat(5, 0.8fr);
 }
-@media (max-width: 620px) {
+@media (max-width: 1100px) {
+  .presentation {
+    row-gap: 5rem;
+  }
+}
+@media (max-width: 670px) {
   .presentation {
     width: 95%;
     display: flex;
@@ -884,29 +889,46 @@ ion-icon {
   align-items: center;
   justify-content: center;
 }
-.presentation__intro {
-  display: flex;
-  align-items: center;
-  width: 80%;
-  gap: 5rem;
-  color: #e2e2e2;
-  position: relative;
+.presentation__info {
+  grid-row: 2/3;
+  grid-column: 1/-1;
+  align-self: center;
+  justify-self: center;
 }
-@media (max-width: 620px) {
-  .presentation__intro {
-    flex-direction: column;
-    padding-bottom: 6rem;
+.presentation__offer {
+  grid-row: 4/5;
+  grid-column: 1/3;
+  align-self: center;
+  justify-self: center;
+}
+.presentation__info, .presentation__offer {
+  color: #e2e2e2;
+}
+@media (max-width: 670px) {
+  .presentation__info, .presentation__offer {
+    padding-left: 3rem;
   }
 }
-.presentation__intro h2 {
-  font-size: 2.4rem;
+.presentation__info h2, .presentation__offer h2 {
+  font-size: 2.2rem;
   margin-bottom: 2rem;
 }
-.presentation__intro li {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+@media (min-width: 1500px) {
+  .presentation__info h2, .presentation__offer h2 {
+    font-size: 3rem;
+  }
 }
-.presentation__intro li span {
+.presentation__info li, .presentation__offer li {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.2;
+}
+@media (min-width: 1500px) {
+  .presentation__info li, .presentation__offer li {
+    font-size: 2.8rem;
+  }
+}
+.presentation__info li span, .presentation__offer li span {
   font-weight: 700;
 }
 .presentation__cta--btn {
@@ -916,43 +938,47 @@ ion-icon {
   transition: all 0.3s ease-in;
   color: #fff;
   text-decoration: none;
-  position: absolute;
-  right: 0;
+  grid-row: 4/5;
+  display: inline;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
 }
 .presentation__cta--btn:hover {
   transform: scale(1.1);
 }
-@media (max-width: 620px) {
+@media (min-width: 1500px) {
   .presentation__cta--btn {
-    bottom: -1rem;
+    font-size: 3rem;
+    justify-self: start;
   }
 }
 .presentation__img {
   width: 100%;
 }
 .presentation__components {
-  grid-column: 1/3;
+  grid-column: 1/-1;
   grid-row: 1/2;
 }
 .presentation__model {
-  grid-row: 2/3;
+  grid-row: 3/4;
   grid-column: 2/4;
 }
 .presentation__size {
-  grid-row: 3/4;
+  grid-row: 5/6;
   grid-column: 1/3;
 }
 .presentation__text {
   color: #e2e2e2;
 }
 .presentation__text--size {
-  grid-row: 3/4;
-  font-size: 2.4rem;
+  grid-row: 5/6;
+  font-size: 2.2rem;
   align-self: center;
   text-align: center;
 }
 .presentation__text--model {
-  grid-row: 2/3;
+  grid-row: 3/4;
   align-self: center;
   line-height: 1.3;
 }
@@ -1022,6 +1048,11 @@ ion-icon {
   justify-content: center;
   gap: 1rem;
 }
+@media (min-width: 1500px) {
+  .tutorial__step {
+    font-size: 2.8rem;
+  }
+}
 @media (max-width: 400px) {
   .tutorial__step {
     flex-direction: column;
@@ -1033,19 +1064,14 @@ ion-icon {
 }
 @media (max-width: 400px) {
   .tutorial__step--text {
-    width: 90%;
+    width: 100%;
   }
 }
 .tutorial__step--text span {
-  font-size: 3rem;
+  font-size: 2.8rem;
 }
 @media (min-width: 1500px) {
   .tutorial__step--text span {
-    font-size: 4.8rem;
-  }
-}
-@media (min-width: 1500px) {
-  .tutorial__step--text {
     font-size: 3rem;
   }
 }
@@ -1065,7 +1091,7 @@ ion-icon {
 }
 @media (max-width: 400px) {
   .tutorial__step--img {
-    width: 90%;
+    width: 80%;
   }
 }
 
@@ -1141,7 +1167,7 @@ ion-icon {
 }
 .slider__panel--heading {
   width: 100%;
-  font-size: 3.6rem;
+  font-size: 3rem;
   font-weight: 700;
   color: white;
   padding-left: 2rem;
@@ -1150,7 +1176,7 @@ ion-icon {
 }
 @media (max-width: 700px) {
   .slider__panel--heading {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 }
 .slider__btn {
@@ -1186,7 +1212,7 @@ ion-icon {
 }
 @media (min-width: 1500px) {
   .slider__cta--btn {
-    font-size: 3.6rem;
+    font-size: 3rem;
   }
 }
 
@@ -1216,7 +1242,7 @@ body {
 }
 @media (min-width: 1500px) {
   body {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 }
 

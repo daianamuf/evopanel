@@ -3,8 +3,13 @@ import { Link } from "react-router-dom";
 function Presentation() {
   return (
     <div className="presentation__wrapper">
-      <div className="presentation__intro">
-        <div>
+      <section className="presentation">
+        <img
+          className="presentation__img presentation__components"
+          src="/assets/images/components.png"
+          alt="Componente"
+        />
+        <div className="presentation__info">
           <h2>Caracteristici ale panourilor noastre siding metalic:</h2>
           <ul>
             <li>
@@ -40,13 +45,32 @@ function Presentation() {
               <p>Garantăm calitatea produselor noastre pentru mulți ani.</p>
             </li>
           </ul>
-
-          <Link className="presentation__cta--btn" to={"/contact"}>
-            Cere o ofertă
-          </Link>
         </div>
+        <img
+          className="presentation__img presentation__model"
+          src="/assets/images/panel-model.png"
+          alt="Model"
+        />
 
-        <div>
+        <p className="presentation__text presentation__text--model">
+          Panourile dețin numeroase accente metalice, precum și experiența
+          vizuală unică pentru ca peretele să nu mai fie monoton. Diversele
+          opțiuni de culoare și textură, permit utilizarea panourilor metalice
+          atât în domeniul decorațiunilor interioare cât și al decorațiunilor
+          exterioare, pentru a răspunde nevoilor decorative personalizate ale
+          utilizatorilor.
+        </p>
+
+        <p className="presentation__text presentation__text--size">
+          3 OPȚIUNI DE LĂȚIME
+        </p>
+        <img
+          className="presentation__img presentation__size"
+          src="/assets/images/size2.png"
+          alt="Marimi"
+        />
+
+        <div className="presentation__offer">
           <h2>Oferta noastră include:</h2>
           <ul>
             <li>
@@ -71,35 +95,9 @@ function Presentation() {
             </li>
           </ul>
         </div>
-      </div>
-
-      <section className="presentation">
-        <img
-          className="presentation__img presentation__components"
-          src="/assets/images/components.png"
-          alt="Componente"
-        />
-        <img
-          className="presentation__img presentation__model"
-          src="/assets/images/panel-model.png"
-          alt="Model"
-        />
-        <p className="presentation__text presentation__text--model">
-          Panourile dețin numeroase accente metalice, precum și experiența
-          vizuală unică pentru ca peretele să nu mai fie monoton. Diversele
-          opțiuni de culoare și textură, permit utilizarea panourilor metalice
-          atât în domeniul decorațiunilor interioare cât și al decorațiunilor
-          exterioare, pentru a răspunde nevoilor decorative personalizate ale
-          utilizatorilor.
-        </p>
-        <p className="presentation__text presentation__text--size">
-          3 OPȚIUNI DE LĂȚIME
-        </p>
-        <img
-          className="presentation__img presentation__size"
-          src="/assets/images/size2.png"
-          alt="Marimi"
-        />
+        <Link className="presentation__cta--btn" to={"/contact"}>
+          Cere o ofertă
+        </Link>
       </section>
     </div>
   );

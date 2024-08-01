@@ -55,6 +55,9 @@
     justify-content: center;
     gap: 1rem;
 
+    @media (min-width: 1500px) {
+      font-size: $h4;
+    }
     @media (max-width: 400px) {
       flex-direction: column;
     }
@@ -64,19 +67,15 @@
       width: 60%;
 
       @media (max-width: 400px) {
-        width: 90%;
+        width: 100%;
       }
 
       & span {
         font-size: $h4;
 
         @media (min-width: 1500px) {
-          font-size: $h2;
+          font-size: $h3;
         }
-      }
-
-      @media (min-width: 1500px) {
-        font-size: $h4;
       }
     }
 
@@ -92,7 +91,7 @@
         width: 30%;
       }
       @media (max-width: 400px) {
-        width: 90%;
+        width: 80%;
       }
     }
   }
