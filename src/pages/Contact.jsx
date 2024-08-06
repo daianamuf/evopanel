@@ -145,11 +145,11 @@ function Contact() {
     <section className="contact">
       <div className="contact__data">
         <p>
-          <ion-icon name="mail-outline"></ion-icon> contact@evosidingmetal.ro
+          <ion-icon name="mail-outline"></ion-icon> contact@evosiding.ro
         </p>
 
         <p>
-          <ion-icon name="call-outline"></ion-icon> 07XX XXX XXX
+          <ion-icon name="call-outline"></ion-icon> 0727 849 241
         </p>
         <p>
           <ion-icon name="location-outline"></ion-icon> Str. Drumul Morii 7C -

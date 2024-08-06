@@ -12,8 +12,8 @@ function Footer() {
       </div>
       <div className="footer__group footer__group--2">
         <p>Str. Drumul Morii 7C - Mogoșoaia, Ilfov</p>
-        <p>contact@evosidingmetal.ro</p>
-        <p>07XX XXX XXX</p>
+        <p>contact@evosiding.ro</p>
+        <p>0727 849 241</p>
       </div>
       <div className="footer__group footer__group--3">
         <a
