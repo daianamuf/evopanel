@@ -7,7 +7,7 @@ function Footer() {
         alt="Footer Image"
       />
       <div className="footer__group footer__group--1">
-        <h1>LOGO</h1>
+        {/* <h1>LOGO</h1> */}
         <h3>EVOSIDING</h3>
       </div>
       <div className="footer__group footer__group--2">
