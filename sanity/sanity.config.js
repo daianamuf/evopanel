@@ -9,6 +9,7 @@ export default defineConfig({
 
   projectId: 'lk48nlsu',
   dataset: 'panels',
+  apiVersion: '2023-08-01',
 
   plugins: [structureTool(), visionTool()],
 

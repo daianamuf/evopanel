@@ -85,6 +85,79 @@
     width: 100%;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    overflow: hidden;
+    opacity: 0;
+    max-height: 0;
+
+    transition: all 0.3s ease-out;
+
+    &.show {
+      opacity: 1;
+    }
+  }
+
+  &__color {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+
+    &--img {
+      width: 8rem;
+      height: 8rem;
+      border-radius: 10px;
+    }
+
+    &--text {
+      color: $cl-white;
+      font-size: $h3;
+      text-transform: uppercase;
+      font-family: sans-serif;
+    }
+  }
+
+  &__toggle-button {
+    width: 100%;
+    padding: 0.6rem 2rem;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: $cl-white;
+    font-family: "Raleway";
+    font-size: $font-base;
+
+    &--open {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+
+      transition: all 0.3s;
+      &:hover {
+        color: $cl-accent;
+        transform: scale(1.1);
+        margin-left: 1rem;
+      }
+
+      & img {
+        width: 3.6rem;
+        height: 3.6rem;
+      }
+    }
+
+    &--close {
+      width: 3.6rem;
+      height: 3.6rem;
+
+      transition: all 0.3s;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
   }
 
   &__prop {

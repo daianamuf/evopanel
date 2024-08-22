@@ -1,5 +1,40 @@
 import { useEffect, useState } from "react";
 import Masonry from "react-masonry-css";
+import { PortableText } from "@portabletext/react";
+import { urlFor } from "../utils/sanityClient";
+
+// const SampleImageComponent = ({ value }) => {
+//   return (
+//     <img
+//       className="panel__color--img"
+//       src={urlFor(value).url()}
+//       alt="Image"
+//       loading="lazy"
+//     />
+//   );
+// };
+
+const components = {
+  types: {
+    imageWithText: ({ value }) => {
+      return (
+        <div className="panel__color">
+          {value.image && (
+            <img
+              className="panel__color--img"
+              src={urlFor(value.image).url()}
+              alt={value.text}
+            />
+          )}
+          {value.text && <p className="panel__color--text">{value.text}</p>}
+        </div>
+      );
+    },
+  },
+  block: {
+    normal: ({ children }) => <p>{children}</p>,
+  },
+};
 
 const breakpointColumnsObj = {
   default: 4,
@@ -10,6 +45,7 @@ const breakpointColumnsObj = {
 
 function Panels() {
   const [panels, setPanels] = useState([]);
+  const [visibleColors, setVisibleColors] = useState({});
 
   useEffect(() => {
     const query = encodeURIComponent(`*[_type == "panel"]{
@@ -20,9 +56,15 @@ function Panels() {
       weight, 
       surface,
       middle,
-      back,
-      "colors": colors.asset->url,
-    }`);
+       colors[] {
+      ...,
+      image {
+        asset-> {
+          url
+        }
+      }
+    }
+          }`);
 
     const url = `https://lk48nlsu.api.sanity.io/v1/data/query/panels?query=${query}`;
 
@@ -35,6 +77,27 @@ function Panels() {
         console.error("Error fetching data:", error);
       });
   }, []);
+
+  // const toggleColorsVisibility = (panelId) => {
+  //   setVisibleColors((prevVisibleColors) => ({
+  //     ...prevVisibleColors,
+  //     [panelId]: !prevVisibleColors[panelId],
+  //   }));
+  // };
+
+  const toggleColorsVisibility = (panelId) => {
+    const content = document.getElementById(`panel-colors-${panelId}`);
+    const currentHeight = visibleColors[panelId]
+      ? "0px"
+      : `${content.scrollHeight}px`;
+
+    setVisibleColors((prevVisibleColors) => ({
+      ...prevVisibleColors,
+      [panelId]: !prevVisibleColors[panelId],
+    }));
+
+    content.style.maxHeight = currentHeight;
+  };
 
   return (
     <div className="panels">
@@ -86,7 +149,33 @@ function Panels() {
                 </p>
               )}
               {panel.colors && (
-                <img className="panel__colors" src={panel.colors} />
+                <div>
+                  <button
+                    className="panel__toggle-button"
+                    onClick={() => toggleColorsVisibility(panel._id)}
+                  >
+                    {visibleColors[panel._id] ? (
+                      <img
+                        className="panel__toggle-button--close"
+                        src="/assets/icons/chevron-up-outline.svg"
+                      />
+                    ) : (
+                      <div className="panel__toggle-button--open">
+                        <p>Mai multe culori</p>
+                        <img src="/assets/icons/chevron-down-outline.svg" />
+                      </div>
+                    )}
+                  </button>
+                  <div
+                    id={`panel-colors-${panel._id}`}
+                    className={`panel__colors ${visibleColors[panel._id] ? "show" : ""}`}
+                  >
+                    <PortableText
+                      value={panel.colors}
+                      components={components}
+                    />
+                  </div>
+                </div>
               )}
             </div>
           ))}

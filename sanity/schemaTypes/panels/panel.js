@@ -23,35 +23,40 @@ export default defineType({
     defineField({
       name: 'size',
       title: 'Marime',
-      type: 'text',
+      type: 'string',
     }),
     defineField({
       name: 'weight',
       title: 'Greutate',
-      type: 'text',
+      type: 'string',
     }),
     defineField({
       name: 'surface',
       title: 'Suprafata',
-      type: 'text',
+      type: 'string',
     }),
     defineField({
       name: 'middle',
       title: 'Mijloc',
-      type: 'text',
+      type: 'string',
     }),
     defineField({
       name: 'back',
       title: 'Spate',
-      type: 'text',
+      type: 'string',
     }),
+    // defineField({
+    //   name: 'colors',
+    //   title: 'Culori',
+    //   type: 'image',
+    //   options: {
+    //     hotspot: true,
+    //   },
+    // }),
     defineField({
       name: 'colors',
       title: 'Culori',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      type: 'blockContent',
     }),
   ],
 })
