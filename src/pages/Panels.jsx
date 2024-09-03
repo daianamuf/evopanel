@@ -2,17 +2,7 @@ import { useEffect, useState } from "react";
 import Masonry from "react-masonry-css";
 import { PortableText } from "@portabletext/react";
 import { urlFor } from "../utils/sanityClient";
-
-// const SampleImageComponent = ({ value }) => {
-//   return (
-//     <img
-//       className="panel__color--img"
-//       src={urlFor(value).url()}
-//       alt="Image"
-//       loading="lazy"
-//     />
-//   );
-// };
+import { Helmet } from "react-helmet-async";
 
 const components = {
   types: {
@@ -78,13 +68,6 @@ function Panels() {
       });
   }, []);
 
-  // const toggleColorsVisibility = (panelId) => {
-  //   setVisibleColors((prevVisibleColors) => ({
-  //     ...prevVisibleColors,
-  //     [panelId]: !prevVisibleColors[panelId],
-  //   }));
-  // };
-
   const toggleColorsVisibility = (panelId) => {
     const content = document.getElementById(`panel-colors-${panelId}`);
     const currentHeight = visibleColors[panelId]
@@ -100,88 +83,103 @@ function Panels() {
   };
 
   return (
-    <div className="panels">
-      <div className="panels__intro">
-        <p>
-          Transformă-ți locuința cu panourile noastre siding metalic premium!
-          Oferim o gamă variată de modele și nuanțe, perfecte pentru orice stil
-          arhitectural. Fie că ești în căutarea unui aspect modern, clasic sau
-          rustic, avem soluția ideală pentru tine.
-        </p>
-      </div>
-      <div className="panels__wrapper">
-        <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column"
-        >
-          {panels.map((panel) => (
-            <div key={panel._id} className="panel">
-              <img
-                src={panel.mainImageUrl}
-                alt={panel.title}
-                className="panel__img"
-              />
-              <h1 className="panel__heading">{panel.title}</h1>
-              {panel.size && (
-                <p className="panel__prop panel__prop--size">
-                  Mărime: {panel.size}
-                </p>
-              )}
-              {panel.weight && (
-                <p className="panel__prop panel__prop--weight">
-                  Greutate: {panel.weight}
-                </p>
-              )}
-              {panel.surface && (
-                <p className="panel__prop panel__prop--surface">
-                  Suprafață: {panel.surface}
-                </p>
-              )}
-              {panel.middle && (
-                <p className="panel__prop panel__prop--middle">
-                  Mijloc: {panel.middle}
-                </p>
-              )}
-              {panel.back && (
-                <p className="panel__prop panel__prop--back">
-                  Spate: {panel.back}
-                </p>
-              )}
-              {panel.colors && (
-                <div>
-                  <button
-                    className="panel__toggle-button"
-                    onClick={() => toggleColorsVisibility(panel._id)}
-                  >
-                    {visibleColors[panel._id] ? (
-                      <img
-                        className="panel__toggle-button--close"
-                        src="/assets/icons/chevron-up-outline.svg"
+    <>
+      <Helmet>
+        <title>
+          Descoperiți Gama Noastră de Panouri Sandwich | Evosiding România
+        </title>
+        <meta
+          name="description"
+          content="Descoperiți o selecție largă de panouri sandwich la EvoSiding, perfecte pentru îmbunătățirea izolației și durabilității clădirilor dvs. în București, România. Aflați mai multe despre produsele noastre și aplicațiile lor."
+        />
+        <meta
+          name="keywords"
+          content="panouri sandwich, izolație, materiale de construcție, București, panouri metalice, Evosiding, Romania"
+        />
+      </Helmet>
+      <div className="panels">
+        <div className="panels__intro">
+          <p>
+            Transformă-ți locuința cu panourile noastre siding metalic premium!
+            Oferim o gamă variată de modele și nuanțe, perfecte pentru orice
+            stil arhitectural. Fie că ești în căutarea unui aspect modern,
+            clasic sau rustic, avem soluția ideală pentru tine.
+          </p>
+        </div>
+        <div className="panels__wrapper">
+          <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column"
+          >
+            {panels.map((panel) => (
+              <div key={panel._id} className="panel">
+                <img
+                  src={panel.mainImageUrl}
+                  alt={panel.title}
+                  className="panel__img"
+                />
+                <h1 className="panel__heading">{panel.title}</h1>
+                {panel.size && (
+                  <p className="panel__prop panel__prop--size">
+                    Mărime: {panel.size}
+                  </p>
+                )}
+                {panel.weight && (
+                  <p className="panel__prop panel__prop--weight">
+                    Greutate: {panel.weight}
+                  </p>
+                )}
+                {panel.surface && (
+                  <p className="panel__prop panel__prop--surface">
+                    Suprafață: {panel.surface}
+                  </p>
+                )}
+                {panel.middle && (
+                  <p className="panel__prop panel__prop--middle">
+                    Mijloc: {panel.middle}
+                  </p>
+                )}
+                {panel.back && (
+                  <p className="panel__prop panel__prop--back">
+                    Spate: {panel.back}
+                  </p>
+                )}
+                {panel.colors && (
+                  <div>
+                    <button
+                      className="panel__toggle-button"
+                      onClick={() => toggleColorsVisibility(panel._id)}
+                    >
+                      {visibleColors[panel._id] ? (
+                        <img
+                          className="panel__toggle-button--close"
+                          src="/assets/icons/chevron-up-outline.svg"
+                        />
+                      ) : (
+                        <div className="panel__toggle-button--open">
+                          <p>Mai multe culori</p>
+                          <img src="/assets/icons/chevron-down-outline.svg" />
+                        </div>
+                      )}
+                    </button>
+                    <div
+                      id={`panel-colors-${panel._id}`}
+                      className={`panel__colors ${visibleColors[panel._id] ? "show" : ""}`}
+                    >
+                      <PortableText
+                        value={panel.colors}
+                        components={components}
                       />
-                    ) : (
-                      <div className="panel__toggle-button--open">
-                        <p>Mai multe culori</p>
-                        <img src="/assets/icons/chevron-down-outline.svg" />
-                      </div>
-                    )}
-                  </button>
-                  <div
-                    id={`panel-colors-${panel._id}`}
-                    className={`panel__colors ${visibleColors[panel._id] ? "show" : ""}`}
-                  >
-                    <PortableText
-                      value={panel.colors}
-                      components={components}
-                    />
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </Masonry>
+                )}
+              </div>
+            ))}
+          </Masonry>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

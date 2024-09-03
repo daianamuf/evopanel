@@ -1,4 +1,5 @@
 import { useReducer, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const initialState = {
   inputs: {
@@ -142,104 +143,117 @@ function Contact() {
   };
 
   return (
-    <section className="contact">
-      <div className="contact__data">
-        <p>
-          <ion-icon name="mail-outline"></ion-icon> contact@evosiding.ro
-        </p>
-
-        <p>
-          <ion-icon name="call-outline"></ion-icon> 0727 849 241
-        </p>
-        <p>
-          <ion-icon name="location-outline"></ion-icon> Str. Drumul Morii 7C -
-          Mogoșoaia, Ilfov
-        </p>
-      </div>
-
-      <form className="contact__form" key={formKey} onSubmit={handleSubmit}>
-        {state.errors.lastName && (
-          <span className="error-message">{state.errors.lastName}</span>
-        )}
-        <input
-          id="lastName"
-          type="text"
-          placeholder="Nume"
-          className="contact__form--input"
-          autoComplete="true"
-          onChange={handleChange}
+    <>
+      <Helmet>
+        <title>Contactați-ne | Evosiding România</title>
+        <meta
+          name="description"
+          content="Contactați echipa Evosiding pentru mai multe informații despre panourile noastre sau pentru a solicita o ofertă. Suntem aici pentru a vă ajuta cu orice întrebare despre proiectele dvs. în București sau România."
         />
-        <label htmlFor="lastName" className="contact__form--label">
-          Nume
-        </label>
-
-        {state.errors.firstName && (
-          <span className="error-message">{state.errors.firstName}</span>
-        )}
-        <input
-          id="firstName"
-          type="text"
-          placeholder="Prenume"
-          className="contact__form--input"
-          autoComplete="true"
-          onChange={handleChange}
+        <meta
+          name="keywords"
+          content="contact Evosiding, panouri sandwich, panouri metalice, panouri case, design case, București, România, oferte construcții, oferte panouri, Evosiding"
         />
-        <label htmlFor="firstName" className="contact__form--label">
-          Prenume
-        </label>
+      </Helmet>
+      <section className="contact">
+        <div className="contact__data">
+          <p>
+            <ion-icon name="mail-outline"></ion-icon> contact@evosiding.ro
+          </p>
 
-        {state.errors.email && (
-          <span className="error-message">{state.errors.email}</span>
-        )}
-        <input
-          id="email"
-          type="email"
-          placeholder="Email"
-          className="contact__form--input"
-          autoComplete="true"
-          onChange={handleChange}
-        />
-        <label htmlFor="email" className="contact__form--label">
-          Email
-        </label>
+          <p>
+            <ion-icon name="call-outline"></ion-icon> 0727 849 241
+          </p>
+          <p>
+            <ion-icon name="location-outline"></ion-icon> Str. Drumul Morii 7C -
+            Mogoșoaia, Ilfov
+          </p>
+        </div>
 
-        {state.errors.phoneNumber && (
-          <span className="error-message">{state.errors.phoneNumber}</span>
-        )}
-        <input
-          id="phoneNumber"
-          placeholder="Telefon"
-          className="contact__form--input"
-          autoComplete="true"
-          onChange={handleChange}
-        />
-        <label htmlFor="phoneNumber" className="contact__form--label">
-          Telefon
-        </label>
+        <form className="contact__form" key={formKey} onSubmit={handleSubmit}>
+          {state.errors.lastName && (
+            <span className="error-message">{state.errors.lastName}</span>
+          )}
+          <input
+            id="lastName"
+            type="text"
+            placeholder="Nume"
+            className="contact__form--input"
+            autoComplete="true"
+            onChange={handleChange}
+          />
+          <label htmlFor="lastName" className="contact__form--label">
+            Nume
+          </label>
 
-        {state.errors.message && (
-          <span className="error-message">{state.errors.message}</span>
-        )}
-        <textarea
-          id="message"
-          type="text"
-          placeholder="Mesaj"
-          className="contact__form--input"
-          onChange={handleChange}
-          rows={10}
-        />
-        <label htmlFor="message" className="contact__form--label">
-          Mesaj
-        </label>
+          {state.errors.firstName && (
+            <span className="error-message">{state.errors.firstName}</span>
+          )}
+          <input
+            id="firstName"
+            type="text"
+            placeholder="Prenume"
+            className="contact__form--input"
+            autoComplete="true"
+            onChange={handleChange}
+          />
+          <label htmlFor="firstName" className="contact__form--label">
+            Prenume
+          </label>
 
-        <button type="submit" className="contact__form--btn">
-          Trimite
-        </button>
-        {submissionMessage && (
-          <div className="submission-message">{submissionMessage}</div>
-        )}
-      </form>
-    </section>
+          {state.errors.email && (
+            <span className="error-message">{state.errors.email}</span>
+          )}
+          <input
+            id="email"
+            type="email"
+            placeholder="Email"
+            className="contact__form--input"
+            autoComplete="true"
+            onChange={handleChange}
+          />
+          <label htmlFor="email" className="contact__form--label">
+            Email
+          </label>
+
+          {state.errors.phoneNumber && (
+            <span className="error-message">{state.errors.phoneNumber}</span>
+          )}
+          <input
+            id="phoneNumber"
+            placeholder="Telefon"
+            className="contact__form--input"
+            autoComplete="true"
+            onChange={handleChange}
+          />
+          <label htmlFor="phoneNumber" className="contact__form--label">
+            Telefon
+          </label>
+
+          {state.errors.message && (
+            <span className="error-message">{state.errors.message}</span>
+          )}
+          <textarea
+            id="message"
+            type="text"
+            placeholder="Mesaj"
+            className="contact__form--input"
+            onChange={handleChange}
+            rows={10}
+          />
+          <label htmlFor="message" className="contact__form--label">
+            Mesaj
+          </label>
+
+          <button type="submit" className="contact__form--btn">
+            Trimite
+          </button>
+          {submissionMessage && (
+            <div className="submission-message">{submissionMessage}</div>
+          )}
+        </form>
+      </section>
+    </>
   );
 }
 
