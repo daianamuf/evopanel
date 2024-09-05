@@ -11,15 +11,30 @@ function Homepage() {
   return (
     <>
       <Helmet>
-        <title>Panouri Sandwich pentru Case | Evosiding România</title>
+        <title>Panouri Sandwich | Evosiding România</title>
         <meta
           name="description"
-          content="Evosiding oferă panouri sandwich de înaltă calitate pentru clădiri rezidențiale și comerciale în România. Descoperiți gama noastră largă de soluții durabile și eficiente energetic. Contactați-ne pentru o ofertă!"
+          content="Panouri sandwich durabile și eficiente energetic pentru clădiri rezidențiale și comerciale. Descoperă soluțiile noastre la Evosiding. Obține o ofertă acum!"
         />
+
         <meta
           name="keywords"
           content="panouri sandwich, București, Ilfov, România, materiale de construcție, panouri rezidențiale, casă, design, panouri comerciale, Evosiding, panouri metalice"
         />
+        <meta
+          property="og:title"
+          content="Panouri Sandwich | Evosiding România"
+        />
+        <meta
+          property="og:description"
+          content="Panouri sandwich durabile și eficiente energetic pentru construcții rezidențiale și comerciale. Contactează Evosiding pentru o ofertă!"
+        />
+        <meta
+          property="og:image"
+          content="https://evosiding.ro/assets/images/6.jpeg"
+        />
+        <meta property="og:url" content="https://evosiding.ro" />
+        <meta property="og:type" content="website" />
       </Helmet>
       <section>
         <Hero />
