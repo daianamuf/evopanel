@@ -84,7 +84,7 @@ function Panels() {
 
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>
           Descoperiți Gama Noastră de Panouri Sandwich | Evosiding România
         </title>
@@ -96,7 +96,32 @@ function Panels() {
           name="keywords"
           content="panouri sandwich, izolație, materiale de construcție, București, panouri metalice, Evosiding, Romania"
         />
+      </Helmet> */}
+      <Helmet>
+        <title>Panouri Sandwich | Evosiding România</title>
+        <meta
+          name="description"
+          content="Descoperiți design-ul variat al panourilor sandwich de la EvoSiding. Ideal pentru îmbunătățirea izolației și rezistenței clădirilor în București și România."
+        />
+        <meta
+          name="keywords"
+          content="panouri sandwich, panouri metalice, panouri izolație, materiale de construcție, București, România, Evosiding"
+        />
+        <meta
+          property="og:title"
+          content="Panouri Sandwich Durabile și Eficiente | Evosiding România"
+        />
+        <meta
+          property="og:description"
+          content="Aflați mai multe despre panourile sandwich durabile și eficiente de la EvoSiding. Ideal pentru îmbunătățirea izolației și rezistenței clădirilor în București și România."
+        />
+        <meta
+          property="og:image"
+          content="https://evosiding.ro/assets/images/13.jpeg"
+        />
+        <meta property="og:url" content="https://evosiding.ro/panouri" />
       </Helmet>
+
       <div className="panels">
         <div className="panels__intro">
           <p>
