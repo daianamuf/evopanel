@@ -115,8 +115,8 @@ function Contact() {
       Object.entries(state.inputs).forEach(([key, value]) => {
         formData.append(key, value);
       });
-      // CHANGE ACCESS KEY!!! //////////////
-      formData.append("access_key", "be6eeaf9-8feb-4de2-be37-79c3273c0ada");
+
+      formData.append("access_key", "b8167d9c-5b16-416c-bdeb-09c6fe7cc9d1");
 
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -170,7 +170,11 @@ function Contact() {
           </p>
         </div>
 
-        <form className="contact__form" key={formKey} onSubmit={handleSubmit}>
+        <form
+          className="contact__form"
+          key={formKey}
+          onSubmit={handleSubmit}
+        >
           {state.errors.lastName && (
             <span className="error-message">{state.errors.lastName}</span>
           )}
@@ -182,7 +186,10 @@ function Contact() {
             autoComplete="true"
             onChange={handleChange}
           />
-          <label htmlFor="lastName" className="contact__form--label">
+          <label
+            htmlFor="lastName"
+            className="contact__form--label"
+          >
             Nume
           </label>
 
@@ -197,7 +204,10 @@ function Contact() {
             autoComplete="true"
             onChange={handleChange}
           />
-          <label htmlFor="firstName" className="contact__form--label">
+          <label
+            htmlFor="firstName"
+            className="contact__form--label"
+          >
             Prenume
           </label>
 
@@ -212,7 +222,10 @@ function Contact() {
             autoComplete="true"
             onChange={handleChange}
           />
-          <label htmlFor="email" className="contact__form--label">
+          <label
+            htmlFor="email"
+            className="contact__form--label"
+          >
             Email
           </label>
 
@@ -226,7 +239,10 @@ function Contact() {
             autoComplete="true"
             onChange={handleChange}
           />
-          <label htmlFor="phoneNumber" className="contact__form--label">
+          <label
+            htmlFor="phoneNumber"
+            className="contact__form--label"
+          >
             Telefon
           </label>
 
@@ -241,11 +257,17 @@ function Contact() {
             onChange={handleChange}
             rows={10}
           />
-          <label htmlFor="message" className="contact__form--label">
+          <label
+            htmlFor="message"
+            className="contact__form--label"
+          >
             Mesaj
           </label>
 
-          <button type="submit" className="contact__form--btn">
+          <button
+            type="submit"
+            className="contact__form--btn"
+          >
             Trimite
           </button>
           {submissionMessage && (

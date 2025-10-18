@@ -84,19 +84,6 @@ function Panels() {
 
   return (
     <>
-      {/* <Helmet>
-        <title>
-          Descoperiți Gama Noastră de Panouri Sandwich | Evosiding România
-        </title>
-        <meta
-          name="description"
-          content="Descoperiți o selecție largă de panouri sandwich la EvoSiding, perfecte pentru îmbunătățirea izolației și durabilității clădirilor dvs. în București, România. Aflați mai multe despre produsele noastre și aplicațiile lor."
-        />
-        <meta
-          name="keywords"
-          content="panouri sandwich, izolație, materiale de construcție, București, panouri metalice, Evosiding, Romania"
-        />
-      </Helmet> */}
       <Helmet>
         <title>Panouri Sandwich | Evosiding România</title>
         <meta
